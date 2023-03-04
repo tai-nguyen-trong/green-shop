@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Thanh Toán</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--icon của title trang, Favicon free  -->
+<link rel="icon" href="https://img.icons8.com/doodle/344/tree--v1.png"
+	type="image/x-icon" />
+
+<!-- Angular JS W3school =====================================================================-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/animate.css">
+
+<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+<link rel="stylesheet" href="/assets/css/aos.css">
+
+<link rel="stylesheet" href="/assets/css/ionicons.min.css">
+
+<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="/assets/css/flaticon.css">
+<link rel="stylesheet" href="/assets/css/icomoon.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<!-- Them lien ket -->
+<!-- Chung giao dien -->
+<body class="goto-here" ng-app="shopping-cart-app"
+	ng-controller="shopping-cart-ctrl">
+	<!-- Header -->
+	<div th:replace="/layout/header.html"></div>
+	<!-- Header -->
+	<hr>
+	
+	<div th:replace="~{/cart/view::shopping-cart}"></div>
+
+	<!-- <div class="container">
+		<div class="row">
+			<div class="col-sm-12">
+
+				<main class="mt-3">
+					<div th:replace="~{/cart/view::shopping-cart}"></div>
+					<div class="card border border-1 border-primary mt-3">
+						<div class="card-header bg-primary text-white">
+							<h3 class="mt-2">ĐẶT MUA</h3>
+						</div>
+						<div class="card-body">
+							<div class="row">
+								<div class="form-group col-sm-6">
+									<label>Tên Người Dùng:</label>
+									<div class="form-control" id="username">[[${#request.remoteUser}]]</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label>Ngày Đặt:</label>
+									<div class="form-control">{{order.createDate |
+										date:'dd-MM-yyyy'}}</div>
+								</div>
+							</div>
+							<div class="row">
+								<div class="form-group col-sm-12">
+									<label>Số Điện Thoại:</label>
+									<input ng-model="order.phone" class="form-control" required>
+								</div>
+							</div>
+							<div class="row mt-2 ml-1">
+								<div class="form-group">
+									<label>Địa Chỉ Giao Hàng:</label>
+									<textarea ng-model="order.address" rows="2" cols="115"
+										class="form-control" required></textarea>
+								</div>
+							</div>
+						</div>
+						<div class="card-footer text-end">
+							<button ng-click="order.purchase()" class="btn btn-success">Mua Hàng</button>
+						</div>
+					</div>
+				</main>
+
+			</div>
+		</div>
+	</div> -->
+
+
+	<hr>
+
+	<div>
+		<section class="ftco-section">
+			<div class="container">
+				<div class="row justify-content-center">
+					<div class="col-xl-7 ftco-animate">
+						<form action="#" class="billing-form">
+							<h3 class="mb-4 billing-heading">Mua Hàng</h3>
+							<div class="row align-items-end">
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="firstname">Tên Người Dùng</label>
+										<!-- tên người dùng dc gọi từ bên js qua id id="username" của hàm order trong shopping-cart-app.js -->
+										<div style="padding-top: 18px;" class="form-control" id="username">[[${#request.remoteUser}]]</div>
+									</div>
+								</div>
+								<div class="col-md-6">
+									<div class="form-group">
+										<label for="lastname">Ngày Đặt</label> 
+										<div style="padding-top: 18px;" class="form-control">{{order.createDate |
+										date:'dd-MM-yyyy'}}</div>
+									</div>
+								</div>
+							 	<div class="col-md-12">
+									<div class="form-group">
+										<label for="streetaddress">Số Điện Thoại</label> 
+										<input ng-model="order.phone" type="number" class="form-control" placeholder="" pattern="[0]\d{9}">  <!-- required -->
+									</div>
+								</div>  
+								<div class="col-md-12">
+									<div class="form-group">
+										<label for="streetaddress">Địa Chỉ Giao Hàng</label> 
+							 			<input ng-model="order.address" type="text" class="form-control" placeholder=""> 	 <!-- required -->
+									</div>
+								</div>
+							</div>
+						</form>
+						<!-- END -->
+					</div>
+					<div class="col-xl-5" style="padding-top: 31px;">
+						<div class="row mt-5 pt-3">
+							<div class="col-md-12 d-flex mb-5">
+								<div class="cart-detail cart-total p-3 p-md-4">
+									<h3 class="billing-heading mb-4">Hóa Đơn Chi Tiết</h3>
+									<p class="d-flex">
+										<span>Số Lượng Sản Phẩm</span> <span>{{cart.count}}</span>
+									</p>
+									<p class="d-flex">
+										<span>Tạm Tính</span> <span>{{cart.amount}} VND</span>
+									</p>
+									<p class="d-flex">
+										<span>Giảm Giá</span> <span>0 VND</span>
+									</p>
+									<hr>
+									<p class="d-flex total-price">
+										<span>Tổng Tiền</span> <span>{{cart.amount}} VND</span>
+									</p>
+								</div>
+							</div>
+							<div class="col-md-12">
+								<div class="cart-detail p-3 p-md-4">
+									<h3 class="billing-heading mb-4">Phương Thức Thanh Toán</h3>
+									<div class="form-group">
+										<div class="col-md-12">
+											<div class="radio">
+												<label><input type="radio" name="optradio" checked
+													class="mr-2"> Thanh Toán Khi Nhận Hàng</label>
+											</div>
+										</div>
+									</div>
+									<p>
+										<button ng-click="order.purchase()" class="btn btn-primary py-3 px-4">Mua Hàng</button>
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- .col-md-8 -->
+				</div>
+			</div>
+		</section>
+
+
+
+
+
+
+		<script>
+			$(document).ready(function() {
+
+				var quantitiy = 0;
+				$('.quantity-right-plus').click(function(e) {
+
+					// Stop acting like a button
+					e.preventDefault();
+					// Get the field name
+					var quantity = parseInt($('#quantity').val());
+
+					// If is not undefined
+
+					$('#quantity').val(quantity + 1);
+
+					// Increment
+
+				});
+
+				$('.quantity-left-minus').click(function(e) {
+					// Stop acting like a button
+					e.preventDefault();
+					// Get the field name
+					var quantity = parseInt($('#quantity').val());
+
+					// If is not undefined
+
+					// Increment
+					if (quantity > 0) {
+						$('#quantity').val(quantity - 1);
+					}
+				});
+
+			});
+		</script>
+
+	</div>
+
+
+	<!-- Footer -->
+	<div th:replace="/layout/footer.html"></div>
+	<!-- Footer -->
+
+
+
+
+
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.easing.1.3.js"></script>
+	<script src="/assets/js/jquery.waypoints.min.js"></script>
+	<script src="/assets/js/jquery.stellar.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/aos.js"></script>
+	<script src="/assets/js/jquery.animateNumber.min.js"></script>
+	<script src="/assets/js/bootstrap-datepicker.js"></script>
+	<script src="/assets/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="/assets/js/google-map.js"></script>
+	<script src="/assets/js/main.js"></script>
+
+	<!-- Link file Angular JS -->
+	<script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>

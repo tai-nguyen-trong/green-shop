@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" >
+<head>
+<title>Giỏ Hàng</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--icon của title trang, Favicon free  -->
+<link rel="icon" href="https://img.icons8.com/doodle/344/tree--v1.png"
+	type="image/x-icon" />
+
+<!-- Angular JS W3school =====================================================================-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/animate.css">
+
+<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+<link rel="stylesheet" href="/assets/css/aos.css">
+
+<link rel="stylesheet" href="/assets/css/ionicons.min.css">
+
+<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="/assets/css/flaticon.css">
+<link rel="stylesheet" href="/assets/css/icomoon.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<!-- Them lien ket -->
+<!-- Chung giao dien -->
+<body class="goto-here" ng-app="shopping-cart-app" ng-controller="shopping-cart-ctrl">
+	<!-- Header -->
+	<div th:replace="/layout/header.html"></div>
+	<!-- Header -->
+	
+	<hr>
+
+
+	<div th:fragment="shopping-cart">
+		<section class="ftco-section ftco-cart">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 ftco-animate">
+						<div class="cart-list">
+							<table class="table">
+								<thead class="thead-primary">
+									<tr class="text-center">
+										<th>&nbsp;</th>
+										<th>Ảnh</th>
+										<th>Tên sản phẩm</th>
+										<th>Giá</th>
+										<th>Số lượng</th>
+										<th>Giá tiền</th>
+									</tr>
+								</thead>
+								<tbody>
+									<!-- them lien ket: ng-repeat="item in cart.items", duyệt qua các mặt hàng trong giỏ -->
+									<tr ng-repeat="item in cart.items" class="text-center">
+										<!-- them lien ket: ng-click="cart.remove(item.id)" -->
+										<td class="product-remove" ng-click="cart.remove(item.id)"><a href="#"><span
+												class="ion-ios-close"></span></a></td>
+
+										<!-- <div class="img">{{item.image}}</div> -->
+										<td class="image-prod">
+											<img ng-src="/assets/images/{{item.image}}" style="width: 100px;">
+										</td>
+
+										<td class="product-name">
+											<h3>{{item.name}}</h3>
+										</td>
+
+										<td class="price">{{item.price}} VND</td>
+
+										<td class="quantity">
+											<div class="input-group mb-3">
+												<!-- them lien ket: ng-change="cart.saveToLocalStorage()": 
+												lưu lại thông tin dô localStorage() khi thay đổi số lượng và sản phẩm.
+												 Giỏ hàng tại header sẽ thay đổi số lượng theo khi tăng số lượng trong bảng thông qua ng-model="item.qty"-->
+												<input ng-change="cart.saveToLocalStorage()" ng-model="item.qty" type="number" min="1" 
+													name="quantity" class="quantity form-control input-number">
+											</div>
+										</td>
+
+										<td class="total">{{item.qty*item.price}} VND</td>
+									</tr>
+									<!-- END TR-->
+								</tbody>
+							</table>
+							<a th:href="@{/product/list}"><--Tiếp tục mua sắm</a>
+							<button style="margin-left: 900px" ng-click="cart.clear()" class="btn btn-danger py-3 px-4">Xóa giỏ hàng</button>
+							<br>
+							<p style="margin-left: 900px"><a th:href="@{/order/checkout}" class="btn btn-primary py-3 px-4 mt-4">Thanh toán</a></p>
+							<p style="margin-left: 900px">Tổng tiền: {{cart.amount}}VND</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+
+		<script>
+			$(document).ready(function() {
+
+				var quantitiy = 0;
+				$('.quantity-right-plus').click(function(e) {
+
+					// Stop acting like a button
+					e.preventDefault();
+					// Get the field name
+					var quantity = parseInt($('#quantity').val());
+
+					// If is not undefined
+
+					$('#quantity').val(quantity + 1);
+
+					// Increment
+
+				});
+
+				$('.quantity-left-minus').click(function(e) {
+					// Stop acting like a button
+					e.preventDefault();
+					// Get the field name
+					var quantity = parseInt($('#quantity').val());
+
+					// If is not undefined
+
+					// Increment
+					if (quantity > 0) {
+						$('#quantity').val(quantity - 1);
+					}
+				});
+
+			});
+		</script>
+	</div>
+
+
+
+	<!-- Footer -->
+	<div th:replace="/layout/footer.html"></div>
+	<!-- Footer -->
+
+
+
+
+
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.easing.1.3.js"></script>
+	<script src="/assets/js/jquery.waypoints.min.js"></script>
+	<script src="/assets/js/jquery.stellar.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/aos.js"></script>
+	<script src="/assets/js/jquery.animateNumber.min.js"></script>
+	<script src="/assets/js/bootstrap-datepicker.js"></script>
+	<script src="/assets/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="/assets/js/google-map.js"></script>
+	<script src="/assets/js/main.js"></script>
+
+	<!-- Link file Angular JS -->
+    <script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>
