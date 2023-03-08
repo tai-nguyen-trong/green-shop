@@ -1,0 +1,31 @@
+<div class="panel panel-default">
+	<div class="panel-heading">DANH SÁCH DANH MỤC</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+        	<thead class="bg-success text-white" style="font-variant: small-caps;">
+        		<tr>
+        			<th>ID</th>
+        			<th>Tên danh mục</th>
+        			<th></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr ng-repeat="item in pager.items">
+        			<td>{{item.id}}</td>
+        			<td>{{item.name}}</td>
+        			<td class="text-center">
+        				<button ng-click="edit(item)" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></button>
+        				<button ng-click="delete(item)" c class="btn btn-danger"><i class="fa-solid fa-trash-can"></i></button>
+        			</td>
+        		</tr>
+        	</tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="pager.first()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-backward-step"></i></button>
+    	<button ng-click="pager.previous()" class="btn btn-primary"><i class="fa-solid fa-backward"></i></button>
+    	<button class="btn btn-success">{{pager.page+1}} trên {{pager.count}}</button>
+    	<button ng-click="pager.next()" class="btn btn-primary"><i class="fa-solid fa-forward"></i></button>
+    	<button ng-click="pager.last()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-forward-step"></i></button>
+    </div>
+</div>

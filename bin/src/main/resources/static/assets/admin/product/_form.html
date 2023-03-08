@@ -1,0 +1,71 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="mt-2">CHI TIẾT SẢN PHẨM </h3>
+    </div>
+    <div class="card-body">
+    	<div class="row">
+    		<div class="col-sm-4 text-center">
+    			
+    		</div>
+    		<div class="col-sm-8">
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Tên sản phẩm</label>
+    					<input ng-model="form.name" class="form-control" />
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<label>Giá</label>
+    					<input ng-model="form.price" class="form-control" />
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Hình ảnh</label>
+    					<input type="file" class="form-control" id="image" /
+    					onchange="angular.element(this).scope().imageChanged(this.files)">
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<label>Danh mục</label>
+    					<select ng-model="form.category.id" class="form-control">
+    						<option ng-repeat="c in cates" ng-value="c.id">{{c.name}}</option>
+    					</select>
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-group col-sm-12">
+    					<label>Mô tả</label>
+    					<textarea ng-model="form.discription" rows="3" cols="115"
+										class="form-control"></textarea>
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Ngày tạo</label>
+    					<input ng-model="form.createDate" type="date" class="form-control" />
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<label>Có sẵn</label>
+    					<div class="form-control">
+    						<div class="form-check ps-0">
+						      <input ng-model="form.available" class="form-check-input1" name="available" ng-value="true" type="radio" id="inlineFormCheck">
+						      <label class="form-check-label" for="inlineFormCheck">
+						        Có
+						      </label>
+						      <input ng-model="form.available" class="form-check-input2 ms-2" name="available" ng-value="false" type="radio" id="inlineFormCheck2">
+						      <label class="form-check-label" for="inlineFormCheck2">
+						        Không
+						      </label>
+						    </div>
+    					</div>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="create()" class="btn btn-primary"><b class="fa-solid fa-square-plus"></b> Create</button>
+    	<button ng-click="update()" class="btn btn-success"><b class="fa-solid fa-square-pen"></b> Update</button>
+    	<button ng-click="delete(form)"  class="btn btn-danger"><b class="fa-solid fa-trash-can"></b> Delete</button>
+    	<button ng-click="reset()" class="btn btn-info"><b class="fa-solid fa-rotate"></b> Reset</button>
+    </div>
+</div>

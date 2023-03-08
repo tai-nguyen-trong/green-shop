@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html 
+	lang="en"
+  class="light-style layout-menu-fixed"
+  dir="ltr"
+  data-theme="theme-default"
+  data-assets-path="../assets/"
+  data-template="vertical-menu-template-free">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - GreenShop</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" integrity="sha512-YWzhKL2whUzgiheMoBFwW8CKV4qpHQAEuvilg9FAn5VJUDwKZZxkJNuGM4XkWuk94WCrrwslk8yWNGmY1EduTA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+	
+	<script src="https://code.jquery.com/jquery-3.6.0.js" integrity="sha256-H+K7U5CnXl1h5ywQfKtSj8PCmoN9aaq30gDh27Xc0jk=" crossorigin="anonymous"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.8.2/angular.min.js" integrity="sha512-7oYXeK0OxTFxndh0erL8FsjGvrl2VMDor6fVqzlLGfwOQQqTbYsGPv4ZZ15QHfSk80doyaM0ZJdvkyDcVO7KFA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!--Router-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-route/1.8.2/angular-route.js" integrity="sha512-C92rntF0G0YH9kHzQlpux7ADvyKgyUwBqusewsHs/0ibOTNuHxFyVqDkI0BIcLGyP76fxgLOpMOLO6kmHCS/xA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="/assets/css/admin.css" />
+    
+    <!--Data-table library-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.11.3/css/dataTables.bootstrap5.min.css"/>
+    <script src="https://cdn.datatables.net/1.11.3/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.3/js/dataTables.bootstrap5.min.js"></script>
+    
+    <!--Data-table library Edge-->
+    <!-- Chart js library-->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js@3.5.1/dist/chart.min.js"></script>
+	<!-- Chart js library Edge-->
+	
+	<!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="../assets/img/favicon/favicon.ico" />
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Public+Sans:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Icons. Uncomment required icon fonts -->
+    <link rel="stylesheet" href="../assets/vendor/fonts/boxicons.css" />
+	
+    <!-- Core CSS -->
+    <link rel="stylesheet" href="../assets/vendor/css/core.css" class="template-customizer-core-css" />
+    <link rel="stylesheet" href="../assets/vendor/css/theme-default.css" class="template-customizer-theme-css" />
+    <link rel="stylesheet" href="../assets/css/demo.css" />
+
+    <!-- Vendors CSS -->
+    <link rel="stylesheet" href="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.css" />
+
+    <link rel="stylesheet" href="../assets/vendor/libs/apex-charts/apex-charts.css" />
+
+    <!-- Page CSS -->
+
+    <!-- Helpers -->
+    <script src="../assets/vendor/js/helpers.js"></script>
+
+    <!--! Template customizer & Theme config files MUST be included after core stylesheets and helpers.js in the <head> section -->
+    <!--? Config:  Mandatory theme config file contain global vars & default theme options, Set your preferred theme option in this file.  -->
+    <script src="../assets/js/config.js"></script>
+    <!--icon của title trang, Favicon free  -->
+	<link rel="icon" href="https://img.icons8.com/doodle/344/tree--v1.png" type="image/x-icon" />
+</head>
+
+<body class="container-xxl flex-grow-1 container-p-y" style="background-color:#F1F1F1 " ng-app="admin-app">
+
+    
+    <!-- Menu -->
+        <aside id="layout-menu" class="layout-menu menu-vertical menu bg-menu-theme">
+          <div class="app-brand demo">
+            <a href="index.html" class="app-brand-link">
+              <img src="/assets/images/logo_shop_admin.png">
+            </a>
+
+            <a href="#" class="layout-menu-toggle menu-link text-large ms-auto d-block d-xl-none">
+              <i class="bx bx-chevron-left bx-sm align-middle"></i>
+            </a>
+          </div>
+
+          <div class="menu-inner-shadow"></div>
+
+          <ul class="menu-inner py-1">
+            <!-- Dashboard -->
+            <li class="menu-item active">
+              <a href="/" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-home-circle"></i>
+                <div data-i18n="Analytics">Trang chủ</div>
+              </a>
+            </li>
+            <!-- Components -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">TỔNG HỢP</span></li>
+            <!-- Cards -->
+            <li class="menu-item">
+              <a href="#!summary" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-chart"></i>
+                <div data-i18n="Basic">Thống kê</div>
+              </a>
+            </li>
+            <li class="menu-header small text-uppercase">
+              <span class="menu-header-text">Quản lý</span>
+            </li>
+            <li class="menu-item">
+              <a href="#!account" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-user"></i>
+                <div data-i18n="Account Settings">Quản lý tài khoản</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#!category" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-list-ul"></i>
+                <div data-i18n="Category Settings">Quản lý danh mục</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#!product" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-collection"></i>
+                <div data-i18n="Product Settings">Quản lý sản phẩm</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#!order" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-cart"></i>
+                <div data-i18n="Order Settings">Quản lý đơn hàng</div>
+              </a>
+            </li>
+            <li class="menu-item">
+              <a href="#!authorize" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-lock-open-alt"></i>
+                <div data-i18n="Authentications">Quản lý phân quyền</div>
+              </a>
+            </li>
+            <!-- Misc -->
+            <li class="menu-header small text-uppercase"><span class="menu-header-text">ĐIỀU KHIỂN</span></li>
+            <li class="menu-item">
+              <a href="/security/logoff" class="menu-link">
+                <i class="menu-icon tf-icons bx bx-log-out"></i>
+                <div data-i18n="Authentications">Đăng xuất</div>
+              </a>
+            </li>
+          </ul>
+        </aside>
+   	
+     <ng-view class="row" style="background-color:white "></ng-view>
+     
+  <div class="layout-page">
+  <div class="container-xxl flex-grow-1 container-p-y">
+  <footer class="content-footer footer bg-footer-theme">
+  <!-- Section: Social media -->
+  <section class="d-flex justify-content-center justify-content-lg-between p-4 border-bottom">
+    <!-- Left -->
+    <div class="me-5 d-none d-lg-block">
+      <span>Kết nối với chúng tôi trên mạng xã hội:</span>
+    </div>
+    <!-- Left -->
+
+    <!-- Right -->
+    <div>
+      <a href="" class="me-4 link-grayish">
+        <i class="fab fa-twitter"></i>
+      </a>
+      <a href="" class="me-4 link-grayish">
+        <i class="fab fa-facebook-f"></i>
+      </a>
+      <a href="" class="me-4 link-grayish">
+        <i class="fab fa-instagram"></i>
+      </a>
+    </div>
+    <!-- Right -->
+  </section>
+  <!-- Section: Social media -->
+
+  <!-- Section: Links  -->
+  <section class="">
+    <div class="container text-center text-md-start mt-5">
+      <!-- Grid row -->
+      <div class="row mt-3">
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-4 col-xl-3 mx-auto mb-4">
+          <!-- Content -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            <img src="/assets/images/logo_shop_admin.png">
+          </h6>
+          <p>
+            Chuyên cung cấp cây cảnh: hoa, xương rồng, sen đá, cây cảnh, cây phong thủy và cây thủy sinh
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-2 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Về chúng tôi
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">Cửa hàng</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">tuyển dụng</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tạp chí</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Liên hệ nhượng quyền</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-3 col-lg-2 col-xl-2 mx-auto mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">
+            Hỗ trợ
+          </h6>
+          <p>
+            <a href="#!" class="text-reset">FAQs</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Tra cứu đơn hàng</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Chính sách chung</a>
+          </p>
+          <p>
+            <a href="#!" class="text-reset">Bảo mật thông tin</a>
+          </p>
+        </div>
+        <!-- Grid column -->
+
+        <!-- Grid column -->
+        <div class="col-md-4 col-lg-3 col-xl-3 mx-auto mb-md-0 mb-4">
+          <!-- Links -->
+          <h6 class="text-uppercase fw-bold mb-4">Liên hệ</h6>
+          <p><i class="fas fa-home me-3 text-grayish"></i> Quận 9, TP.HCM, VN</p>
+          <p>
+            <i class="fas fa-envelope me-3 text-grayish"></i>
+            greenshop@gmail.com
+          </p>
+          <p><i class="fas fa-phone me-3 text-grayish"></i> + 0123 456 788</p>
+          <p><i class="fas fa-print me-3 text-grayish"></i> + 0123 456 789</p>
+        </div>
+        <!-- Grid column -->
+      </div>
+      <!-- Grid row -->
+    </div>
+  </section>
+  <!-- Section: Links  -->
+
+  <!-- Copyright -->
+  <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.025);">
+    © 2022 Copyright:
+    <a class="text-reset fw-bold" href="https://mdbootstrap.com/">GreenShop.com</a>
+  </div>
+  <!-- Copyright -->
+</footer>
+</div>
+</div>
+	<script src="/assets/admin/admin-app.js"></script>
+	<script src="/assets/admin/product/product-ctrl.js"></script>
+	<script src="/assets/admin/authority/authority-ctrl.js"></script>
+	<script src="/assets/admin/account/account-ctrl.js"></script>
+	<script src="/assets/admin/summary/summary-ctrl.js"></script>
+	<script src="/assets/admin/category/category-ctrl.js"></script>
+	<script src="/assets/admin/order/order-ctrl.js"></script>
+	
+	<!-- Core JS -->
+    <!-- build:js assets/vendor/js/core.js -->
+    <script src="../assets/vendor/libs/jquery/jquery.js"></script>
+    <script src="../assets/vendor/libs/popper/popper.js"></script>
+    <script src="../assets/vendor/js/bootstrap.js"></script>
+    <script src="../assets/vendor/libs/perfect-scrollbar/perfect-scrollbar.js"></script>
+
+    <script src="../assets/vendor/js/menu.js"></script>
+    <!-- endbuild -->
+
+    <!-- Vendors JS -->
+    <script src="../assets/vendor/libs/apex-charts/apexcharts.js"></script>
+
+    <!-- Main JS -->
+    <script src="../assets/js/main.js"></script>
+
+    <!-- Page JS -->
+    <script src="../assets/js/dashboards-analytics.js"></script>
+
+    <!-- Place this tag in your head or just before your close body tag. -->
+    <script async defer src="https://buttons.github.io/buttons.js"></script>
+</body>
+</html>

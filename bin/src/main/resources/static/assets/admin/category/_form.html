@@ -1,0 +1,32 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="mt-2">CHI TIẾT DANH MỤC </h3>
+    </div>
+    <div class="card-body">
+    	<div class="row">
+    		<div class="col-sm-4 text-center">
+    			
+    		</div>
+    		<div class="col-sm-8">
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>ID</label>
+    					<input ng-model="form.id" class="form-control" />
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Tên danh mục</label>
+    					<input ng-model="form.name" class="form-control" />
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="create()" class="btn btn-primary"><b class="fa-solid fa-square-plus"></b> Create</button>
+    	<button ng-click="update()" class="btn btn-success"><b class="fa-solid fa-square-pen"></b> Update</button>
+    	<button ng-click="delete(form)"  class="btn btn-danger"><b class="fa-solid fa-trash-can"></b> Delete</button>
+    	<button ng-click="reset()" class="btn btn-info"><b class="fa-solid fa-rotate"></b> Reset</button>
+    </div>
+</div>

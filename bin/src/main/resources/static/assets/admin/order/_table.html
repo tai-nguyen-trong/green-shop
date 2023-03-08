@@ -1,0 +1,38 @@
+<div class="panel panel-default">
+	<div class="panel-heading">DANH SÁCH ĐƠN HÀNG</div>
+    <div class="card-body">
+        <table class="table table-bordered">
+        	<thead class="bg-success text-white" style="font-variant: small-caps;">
+        		<tr>
+        			<th>ID</th>
+        			<th>Tên khách hàng</th>
+        			<th>Ngày tạo</th>
+        			<th>Địa chỉ</th>
+        			<th>SĐT</th>
+        			<th>Trạng thái</th>
+        			<th></th>
+        		</tr>
+        	</thead>
+        	<tbody>
+        		<tr ng-repeat="item in pager.items">
+        			<td>{{item.id}}</td>
+        			<td>{{item.account.username}}</td>
+        			<td>{{item.createDate|date:'dd-MM-yyyy'}}</td>
+        			<td>{{item.address}}</td>
+        			<td>{{item.phone}}</td>
+        			<td>{{item.status}}</td>
+        			<td class="text-center">
+        				<button ng-click="edit(item)" class="btn btn-warning"><i class="fa-solid fa-square-pen"></i></button>
+        			</td>
+        		</tr>
+        	</tbody>
+        </table>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="pager.first()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-backward-step"></i></button>
+    	<button ng-click="pager.previous()" class="btn btn-primary"><i class="fa-solid fa-backward"></i></button>
+    	<button class="btn btn-success">{{pager.page+1}} trên {{pager.count}}</button>
+    	<button ng-click="pager.next()" class="btn btn-primary"><i class="fa-solid fa-forward"></i></button>
+    	<button ng-click="pager.last()" class="btn btn-danger" style="width: 42px;"><i class="fa-solid fa-forward-step"></i></button>
+    </div>
+</div>

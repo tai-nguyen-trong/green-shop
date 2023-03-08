@@ -1,0 +1,52 @@
+<div class="card">
+    <div class="card-header">
+        <h3 class="mt-2">CHI TIẾT TÀI KHOẢN</h3>
+    </div>
+    <div class="card-body">
+    	<div class="row">
+    		
+    		<div class="col-sm-8">
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Tên tài khoản</label>
+    					<input ng-model="form.username" class="form-control" />
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<label>Mật khẩu</label>
+    					<input ng-model="form.password" class="form-control" type="password"/>
+    				</div>
+    			</div>
+    			<div class="row">
+    				
+    				<div class="form-group col-sm-6">
+    					<label>Vai trò</label>
+    					<div class="form-control">
+    						<div class="form-check ps-0">
+						      	<label ng-repeat="r in roles" class="form-check-label me-2" for="inlineFormCheck">
+						      	<input ng-model="selectedRole" ng-value="r" class="form-check-input1" type="checkbox" id="inlineFormCheck" ng-checked="selection.indexOf(r)>-1" ng-click="toggleRole(r)">
+							        {{r.name}}
+							     </label>
+						    </div>
+    					</div>
+    				</div>
+    			</div>
+    			<div class="row">
+    				<div class="form-group col-sm-6">
+    					<label>Họ và tên</label>
+    					<input ng-model="form.fullname" class="form-control"/>
+    				</div>
+    				<div class="form-group col-sm-6">
+    					<label>Email</label>
+    					<input ng-model="form.email" class="form-control" type="email"/>
+    				</div>
+    			</div>
+    		</div>
+    	</div>
+    </div>
+    <div class="card-footer text-center">
+    	<button ng-click="create()" class="btn btn-primary"><b class="fa-solid fa-square-plus"></b> Create</button>
+    	<button ng-click="update()" class="btn btn-success"><b class="fa-solid fa-square-pen"></b> Update</button>
+    	<!-- <button ng-click="delete(form)"  class="btn btn-danger"><b class="fa-solid fa-trash-can"></b> Delete</button> -->
+    	<button ng-click="reset()" class="btn btn-info"><b class="fa-solid fa-rotate"></b> Reset</button>
+    </div>
+</div>

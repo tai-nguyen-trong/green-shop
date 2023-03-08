@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Sản Phẩm</title>
+<meta charset="utf-8">
+<meta name="viewport"
+	content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+<!--icon của title trang, Favicon free  -->
+<link rel="icon" href="https://img.icons8.com/doodle/344/tree--v1.png"
+	type="image/x-icon" />
+
+<!-- Angular JS W3school =====================================================================-->
+<script
+	src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
+
+<link
+	href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,500,600,700,800&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Lora:400,400i,700,700i&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css?family=Amatic+SC:400,700&display=swap"
+	rel="stylesheet">
+
+<link rel="stylesheet" href="/assets/css/open-iconic-bootstrap.min.css">
+<link rel="stylesheet" href="/assets/css/animate.css">
+
+<link rel="stylesheet" href="/assets/css/owl.carousel.min.css">
+<link rel="stylesheet" href="/assets/css/owl.theme.default.min.css">
+<link rel="stylesheet" href="/assets/css/magnific-popup.css">
+
+<link rel="stylesheet" href="/assets/css/aos.css">
+
+<link rel="stylesheet" href="/assets/css/ionicons.min.css">
+
+<link rel="stylesheet" href="/assets/css/bootstrap-datepicker.css">
+<link rel="stylesheet" href="/assets/css/jquery.timepicker.css">
+
+
+<link rel="stylesheet" href="/assets/css/flaticon.css">
+<link rel="stylesheet" href="/assets/css/icomoon.css">
+<link rel="stylesheet" href="/assets/css/style.css">
+</head>
+
+<!-- Them lien ket -->
+<!-- Chung giao dien -->
+<body class="goto-here" ng-app="shopping-cart-app"
+	ng-controller="shopping-cart-ctrl">
+	<!-- Header -->
+	<div th:replace="/layout/header.html"></div>
+	<!-- Header -->
+	<hr>
+	<div>
+		
+	
+
+		<section class="ftco-section">
+			<div class="container">
+				<!-- Category -->
+				<div class="row justify-content-center">
+					<div class="col-md-10 mb-5 text-center">
+						<ul class="product-category">
+							<li><a th:href="@{/product/list}" class="active">All</a></li>
+							<li th:replace="/category/category.html"><a href="#"></a></li>
+							
+						</ul>
+					</div>
+				</div>
+				<!-- Category -->
+				<div class="row">
+				<!--Hiển thị sp, dùng vòng lặp để duyệt qua các items mà items đc truyền từ controller qua: th:each="p:${items}" -->
+					<div th:each="p:${items}" class="col-md-6 col-lg-3 ftco-animate">
+						<div class="product">
+							<!-- Hiển thị ảnh -->
+							<a th:href="@{|/product/detail/${p.id}|}" class="img-prod"><img class="img-fluid"
+								th:src="@{|/assets/images/${p.image}|}" alt="Colorlib Template">
+								<div class="overlay"></div> </a>
+							<div class="text py-3 pb-4 px-3 text-center">
+								<h3>
+									<!-- Hiển thị tên -->
+									<a th:utext="${p.name}" href="#"></a>
+								</h3>
+								<div class="d-flex">
+									<div class="pricing">
+										<p class="price">
+											<!-- Hiển thị giá -->
+											<span class="price-sale">[[${p.price}]]</span>
+										</p>
+									</div>
+								</div>
+								<div class="bottom-area d-flex px-3">
+									<div class="m-auto d-flex">
+										<button th:attr="ng-click=@{|cart.add(${p.id})|}" class="buy-now d-flex justify-content-center align-items-center mx-1">
+						        			Thêm vào giỏ hàng
+						        		</button>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- ............................... -->
+					
+					
+					
+				</div>
+				
+				
+				
+				
+			</div>
+		</section>
+	</div>
+
+
+	<!-- Footer -->
+	<div th:replace="/layout/footer.html"></div>
+	<!-- Footer -->
+
+
+
+	<script src="/assets/js/jquery.min.js"></script>
+	<script src="/assets/js/jquery-migrate-3.0.1.min.js"></script>
+	<script src="/assets/js/popper.min.js"></script>
+	<script src="/assets/js/bootstrap.min.js"></script>
+	<script src="/assets/js/jquery.easing.1.3.js"></script>
+	<script src="/assets/js/jquery.waypoints.min.js"></script>
+	<script src="/assets/js/jquery.stellar.min.js"></script>
+	<script src="/assets/js/owl.carousel.min.js"></script>
+	<script src="/assets/js/jquery.magnific-popup.min.js"></script>
+	<script src="/assets/js/aos.js"></script>
+	<script src="/assets/js/jquery.animateNumber.min.js"></script>
+	<script src="/assets/js/bootstrap-datepicker.js"></script>
+	<script src="/assets/js/scrollax.min.js"></script>
+	<script
+		src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
+	<script src="/assets/js/google-map.js"></script>
+	<script src="/assets/js/main.js"></script>
+
+	<!-- Link file Angular JS -->
+    <script src="/assets/js/shopping-cart-app.js"></script>
+</body>
+</html>

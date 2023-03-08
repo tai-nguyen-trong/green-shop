@@ -1,0 +1,8 @@
+<div xmlns:th="http://www.thymeleaf.org" class="row justify-content-center">
+	<div class="col-md-10 mb-5 text-center">
+		<ul class="product-category">
+			<!-- duyệt qua cates bên trong request thông qua Attribute "cates" của GlobalInterceptor -->
+			<li><a th:each="c:${cates}" th:href="@{|/product/list?cid=${c.id}|}">[[${c.name}]]</a></li>  <!-- hiển thị tên danh mục -->
+		</ul>
+	</div>
+</div>
