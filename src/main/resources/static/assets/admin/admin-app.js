@@ -18,10 +18,6 @@ app.config(function($routeProvider) {
         templateUrl:"/assets/admin/order/index.html",
         controller: "order-ctrl"
     })
-    .when("/summary",{
-        templateUrl:"/assets/admin/summary/index.html",
-        controller: "summary-ctrl"
-    })
     .when("/authorize",{
         templateUrl:"/assets/admin/authority/index.html",
         controller: "authority-ctrl"
@@ -31,7 +27,7 @@ app.config(function($routeProvider) {
         controller: "authority-ctrl"
     })
     .otherwise({
-        redirectTo: "/summary",
-        controller: "summary-ctrl"
+        redirectTo: "/account",
+        controller: "account-ctrl"
     })
 })
