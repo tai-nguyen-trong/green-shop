@@ -6,7 +6,7 @@ Green Shop là một trang web bán cây cảnh trực tuyến. Trang web cung c
 Cài đặt và sử dụng
 
 Cài đặt
-Clone repository về máy tính của bạn: git clone https://github.com/yourusername/yourproject.git
+Clone repository về máy tính của bạn: git clone https://github.com/tai-nguyen-trong/green-shop.git
 Chạy dự án trên eclipse và sau đó mở trình duyệt web và truy cập vào địa chỉ http://localhost:8080/
 
 Sử dụng
