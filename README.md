@@ -7,7 +7,7 @@ Cài đặt và sử dụng
 
 Cài đặt
 Clone repository về máy tính của bạn: git clone https://github.com/yourusername/yourproject.git
-Chạy dự án và sau đó mở trình duyệt web và truy cập vào địa chỉ http://localhost:8080/
+Chạy dự án trên eclipse và sau đó mở trình duyệt web và truy cập vào địa chỉ http://localhost:8080/
 
 Sử dụng
 Đăng nhập vào tài khoản của bạn để xem danh sách sản phẩm và giỏ hàng.
@@ -31,3 +31,6 @@ Email: tai.nguyen7922@gmail.com
 Tài liệu tham khảo
 Spring documentation
 Angular.js documentation
+Template
+Youtube
+...
