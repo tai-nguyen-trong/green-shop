@@ -17,6 +17,24 @@ public interface AccountDAO extends JpaRepository<Account, String>{
 
 	
 	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 	//thi
 	@Query("SELECT o FROM Account o WHERE email=:mail")
 	Account GetByMail(@Param("mail") String mail);

@@ -9,7 +9,7 @@ import com.green.interceptor.GlobalInterceptor;
 
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer{
-	//Cấu hình để chặn các ủrl không cần thiết để chạy danh mục bên phải
+	//Cấu hình để chặn các url không cần thiết để chạy danh mục bên phải
 	@Autowired
 	GlobalInterceptor globalInterceptor;
 	
