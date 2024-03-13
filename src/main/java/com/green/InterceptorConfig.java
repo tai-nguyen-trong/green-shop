@@ -9,15 +9,14 @@ import com.green.interceptor.GlobalInterceptor;
 
 @Configuration
 public class InterceptorConfig implements WebMvcConfigurer{
-	//Cấu hình để chặn các url không cần thiết để chạy danh mục bên phải
+	//Config block url
 	@Autowired
 	GlobalInterceptor globalInterceptor;
 	
 	@Override
 	public void addInterceptors(InterceptorRegistry registry) {
 		registry.addInterceptor(globalInterceptor)
-		//Chỉ ra những globalInterceptor mà ta muốn Interceptor này thực hiện
-		.addPathPatterns("/product/list")  //thực hiện trừ dòng ở dưới
-		.excludePathPatterns("/rest/**", "/admin/**", "/assets/**");  //không thực hiện
+		.addPathPatterns("/product/list")  //effectuate
+		.excludePathPatterns("/rest/**", "/admin/**", "/assets/**");  //not done
 	}
 }
