@@ -29,9 +29,8 @@ Database: Microsoft SQL Server.
 git clone https://github.com/tai-nguyen-trong/green-shop.git
 ```
 
-Afterwards, run the project and open the browser, then access the address http://localhost:8080/ to experience the service.
 
-## Notes
+## Setup environment
 
 You need to adjust some configuration settings to match your computer's local environment.
 
@@ -52,4 +51,14 @@ Here, My database account information:
   - Username account `sa`
   
   - Password `12345678`
+
+
+I have placed my two database files in the path `green-shop\src\main\java\com\green\database`.
+
+Next, you open your Microsoft SQL Server and `Attach` the `greenshop3.mdf` file, and you will have a database `greenshop3`.
+
+
+## Run
+
+Afterwards, run the project and open the browser, then access the address http://localhost:8080/ to experience the service.
 
