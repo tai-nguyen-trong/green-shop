@@ -5,22 +5,22 @@ Green Shop is an online plant store specializing in selling ornamental plants. T
 
 ## Features
 
-Displaying product listings and shopping cart.
+1. Displaying product listings and shopping cart.
 
-Adding products to the shopping cart and proceeding to checkout.
+2. Adding products to the shopping cart and proceeding to checkout.
 
-Managing information of placed orders.
+3. Managing information of placed orders.
 
-Admin management: products, users, orders, etc.
+4. Admin management: products, users, orders, etc.
 
 
 ## Technical
 
-Backend: [Springboot](https://spring.io/projects/spring-boot).
+- Backend: [Springboot](https://spring.io/projects/spring-boot).
 
-Frontend: [Thymeleaf](https://www.thymeleaf.org/), [AngularJS](https://angularjs.org/).
+- Frontend: [Thymeleaf](https://www.thymeleaf.org/), [AngularJS](https://angularjs.org/).
 
-Database: Microsoft SQL Server.
+- Database: Microsoft SQL Server.
 
 
 ## Installation
