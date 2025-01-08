@@ -10,6 +10,7 @@ public class GreenStoreApplication {
 
 	public static void main(String[] args) {
 		SpringApplication.run(GreenStoreApplication.class, args);
+		System.out.println("test edit");
 		
 		//Auto run this request
 		Runtime rt = Runtime.getRuntime();
