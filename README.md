@@ -27,6 +27,7 @@ Green Shop is an online plant store specializing in selling ornamental plants. T
 
 ```git
 git clone https://github.com/tai-nguyen-trong/green-shop.git
+cd green-shop
 ```
 
 
