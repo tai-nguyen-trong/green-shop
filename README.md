@@ -31,35 +31,13 @@ cd green-shop
 ```
 
 
-## Setup environment
+## Run with Docker
 
-You need to adjust some configuration settings to match your computer's local environment.
+Make sure you have Docker and Docker Compose installed on your machine.
 
-In the `application.properties` file, you can find it at the path `green-shop\src\main\resources`.
-
-```properties
-spring.datasource.url=jdbc:sqlserver://localhost;database=greenshop3
-spring.datasource.username=sa
-spring.datasource.password=12345678
+```git
+docker-compose up --build
 ```
 
-You need to change the name of the database name, username account and the password to match your computer's local environment.
-
-Here, My database account information:
-
-  - Database name `greenshop3`
-  
-  - Username account `sa`
-  
-  - Password `12345678`
-
-
-I have placed my two database files in the path `green-shop\src\main\java\com\green\database`.
-
-Next, you open your Microsoft SQL Server and `Attach` the `greenshop3.mdf` file, and you will have a database `greenshop3`.
-
-
-## Run
-
-Afterwards, run the project and open the browser, then access the address http://localhost:8080/ to experience the service.
+Afterwards, open your browser and access the address http://localhost:8080/ to experience the service.
 
