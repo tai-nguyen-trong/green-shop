@@ -1,0 +1,26 @@
+version: '3.8'
+
+services:
+  db:
+    build:
+      context: ./database
+    container_name: greenshop_db
+    environment:
+      SA_PASSWORD: "YourStrong!Passw0rd"
+      ACCEPT_EULA: "Y"
+    ports:
+      - "1433:1433"
+    volumes:
+      - ./database:/var/opt/mssql/data
+
+  app:
+    build: .
+    container_name: greenshop_app
+    ports:
+      - "8080:8080"
+    depends_on:
+      - db
+    environment:
+      SPRING_DATASOURCE_URL: jdbc:sqlserver://db:1433;database=greenshop3
+      SPRING_DATASOURCE_USERNAME: sa
+      SPRING_DATASOURCE_PASSWORD: YourStrong!Passw0rd
